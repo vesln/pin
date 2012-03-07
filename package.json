@@ -1,0 +1,24 @@
+{
+    "name": "pin"
+	, "description": ""
+  , "version": "0.0.0"
+  , "keywords": ["ping"]
+  , "author": "Veselin Todorov <hi@vesln.com>"
+  , "devDependencies": {
+      "mocha": "0.x.x"
+    , "chai": "*"
+    , "jack": "*"
+  }
+  , "repository" : {
+      "type" : "git"
+    , "url" : "http://github.com/vesln/pin.git"
+  }
+  , "homepage": "http://github.com/vesln/pin"
+  , "scripts": {
+      "test": "make test"
+  }
+  , "main": "./lib/pin.js"
+  , "engines": {
+      "node": ">= 0.6.0"
+  }
+}
