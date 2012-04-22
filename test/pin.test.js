@@ -26,6 +26,23 @@ function fakeDriver(fn) {
 };
 
 describe('pin', function() {
+  it('supports custom validators', function(done) {
+    var driver = fakeDriver(function(url, fn) {
+      fn(null, {statusCode: '200'});
+    });
+
+    var end = false;
+
+    var validator = function() {
+      if (!end) (end = true) && done();
+    };
+
+    pin('http://google.com/', driver)
+      .interval(5)
+      .register(validator)
+      .up(function(res) {});
+  });
+
   describe('when monitoring', function() {
     it('is repeatable', function(done) {
       var driver = fakeDriver(function(url, fn) {
