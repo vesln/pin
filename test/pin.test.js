@@ -15,21 +15,11 @@ var should = require('chai').should();
  */
 var pin = require('../lib/pin');
 
-/**
- * Return a fake driver object
- *
- * @param {Function} the desired get function
- * @retrns {Object}
- */
-function fakeDriver(fn) {
-  return { get: fn }
-};
-
 describe('pin', function() {
   it('supports custom validators', function(done) {
-    var driver = fakeDriver(function(url, fn) {
+    var driver = function(options, fn) {
       fn(null, {statusCode: '200'});
-    });
+    };
 
     var end = false;
 
@@ -45,9 +35,9 @@ describe('pin', function() {
 
   describe('when monitoring', function() {
     it('is repeatable', function(done) {
-      var driver = fakeDriver(function(url, fn) {
+      var driver = function(options, fn) {
         fn(null, {statusCode: '200'});
-      });
+      };
 
       var i = 0;
 
@@ -59,9 +49,9 @@ describe('pin', function() {
     });
 
     it('notifies when site is down', function(done) {
-      var driver = fakeDriver(function(url, fn) {
+      var driver = function(options, fn) {
         fn(null, {statusCode: 404});
-      });
+      };
 
       var end = false;
 
@@ -73,9 +63,9 @@ describe('pin', function() {
     });
 
     it('notifies when site is up', function(done) {
-      var driver = fakeDriver(function(url, fn) {
+      var driver = function(options, fn) {
         fn(null, {statusCode: 200});
-      });
+      };
 
       var end = false;
 
@@ -87,9 +77,9 @@ describe('pin', function() {
     });
 
     it('notifies when an error occurs', function(done) {
-      var driver = fakeDriver(function(url, fn) {
+      var driver = function(options, fn) {
         fn(new Error('Test error'), {});
-      });
+      };
 
       var end = false;
 
@@ -103,10 +93,10 @@ describe('pin', function() {
 
     describe('when text to check is present', function() {
       it('emits up if the text exist', function(done) {
-        var driver = fakeDriver(function(url, fn) {
+        var driver = function(options, fn) {
           var body = 'This is Awesome';
           fn(null, {statusCode: 200}, body);
-        });
+        };
 
         var end = false;
 
@@ -119,10 +109,10 @@ describe('pin', function() {
       });
 
       it('emits down if the text is not present', function(done) {
-        var driver = fakeDriver(function(url, fn) {
+        var driver = function(options, fn) {
           var body = 'This is a problem';
           fn(null, {statusCode: 200}, body);
-        });
+        };
 
         var end = false;
 
