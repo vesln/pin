@@ -33,6 +33,20 @@ describe('pin', function() {
       .up(function(res) {});
   });
 
+  it('supports custom headers', function(done) {
+    var end = false;
+
+    var driver = function(options, fn) {
+      options.headers.should.eql({'Key': 'Value'});
+      if (!end) (end = true) && done();
+    };
+
+    pin('http://google.com/', driver)
+      .interval(5)
+      .header('Key', 'Value')
+      .up(function(res) {});
+  });
+
   describe('when monitoring', function() {
     it('is repeatable', function(done) {
       var driver = function(options, fn) {
