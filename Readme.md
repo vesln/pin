@@ -60,15 +60,25 @@ pin('http://google.com/')
    })
 ```
 
+Register custom headers:
+
+```js
+var pin = require('pin');
+
+pin('http://google.com/')
+  .interval(10000) // in ms
+  .header('My-header', 'Foo')
+  .header('Other-header', 'Bar')
+  .up(function(response) {
+      console.log(response);
+   })
+```
+
 ## Features
 
 - Super minimalistic api
-- Custom drivers, switch between superagent, request or your awesome driver
 - Custom validators
 - Check if text is present in the body
-
-## Todo
-
 - Custom headers
 
 ## Tests
