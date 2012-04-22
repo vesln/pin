@@ -1,13 +1,15 @@
 {
     "name": "pin"
-	, "description": ""
+	, "description": "Is my site up? Node.js edition."
   , "version": "0.0.0"
-  , "keywords": ["ping"]
+  , "keywords": ["ping", "is my site up"]
   , "author": "Veselin Todorov <hi@vesln.com>"
+  , "dependencies": {
+      "request": "2.9.202"
+  }
   , "devDependencies": {
       "mocha": "0.x.x"
     , "chai": "*"
-    , "jack": "*"
   }
   , "repository" : {
       "type" : "git"
