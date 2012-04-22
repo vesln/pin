@@ -74,12 +74,48 @@ describe('pin', function() {
         fn(new Error('Test error'), {});
       });
 
+      var end = false;
+
       pin('http://google.com/', driver)
         .interval(5)
         .down(function(err, res) {
           err.should.be.ok;
-          done();
+          if (!end) (end = true) && done();
         });
+    });
+
+    describe('when text to check is present', function() {
+      it('emits up if the text exist', function(done) {
+        var driver = fakeDriver(function(url, fn) {
+          var body = 'This is Awesome';
+          fn(null, {statusCode: 200}, body);
+        });
+
+        var end = false;
+
+        pin('http://google.com/', driver)
+          .text('Awesome')
+          .interval(10)
+          .up(function(err, res) {
+            if (!end) (end = true) && done();
+          });
+      });
+
+      it('emits down if the text is not present', function(done) {
+        var driver = fakeDriver(function(url, fn) {
+          var body = 'This is a problem';
+          fn(null, {statusCode: 200}, body);
+        });
+
+        var end = false;
+
+        pin('http://google.com/', driver)
+          .text('Awesome')
+          .interval(10)
+          .down(function(err, res) {
+            if (!end) (end = true) && done();
+          });
+      });
     });
   });
 });
