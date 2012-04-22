@@ -13,7 +13,7 @@ $ npm install pin
 ## Usage
 
 ```js
-var pin = require('ping');
+var pin = require('pin');
 
 pin('http://google.com/')
   .interval(10000) // in ms
