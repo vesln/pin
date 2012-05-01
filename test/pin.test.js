@@ -134,5 +134,47 @@ describe('pin', function() {
           });
       });
     });
+
+    describe('when maxDuration to check is present', function () {
+      it('emits up if duration is less than max', function (done) {
+        var driver = fakeDriver(function (url, fn) {
+          fn(null, {statusCode: 200});
+        });
+
+        var end = false;
+
+        pin('http://google.com/', driver)
+          .interval(10)
+          .maxDuration(1000)
+          .down(function () {
+            throw Error('down should not be called');
+          })
+          .up(function (res, info) {
+            info.duration.should.be.below(1000);
+            if (!end) (end = true) && done();
+          });
+      });
+
+      it('emits down if duration is more than max', function (done) {
+        var driver = fakeDriver(function (url, fn) {
+          setTimeout(function () {
+            fn(null, {statusCode: 200});
+          }, 20);
+        });
+
+        var end = false;
+
+        pin('http://google.com/', driver)
+          .interval(10)
+          .maxDuration(10)
+          .up(function () {
+             throw Error('up should not be called');
+          })
+          .down(function (err, res, info) {
+            info.duration.should.be.above(10);
+            if (!end) (end = true) && done();
+          });
+      });
+    });
   });
 });
