@@ -1,7 +1,7 @@
 {
     "name": "pin"
 	, "description": "Is my site up? Node.js edition."
-  , "version": "0.2.0"
+  , "version": "0.3.0"
   , "keywords": ["ping", "is my site up"]
   , "author": "Veselin Todorov <hi@vesln.com>"
   , "dependencies": {

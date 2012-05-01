@@ -1,5 +1,12 @@
 
-n.n.n / 2012-04-22 
+0.3.0 / 2012-05-01
+==================
+
+  * rename internal maxDuration to _maxDuration
+  * documentation for 'add performance check (maxDuration)'
+  * add performance check (maxDuration)
+
+0.2.0 / 2012-04-22 
 ==================
 
   * Add headers support
