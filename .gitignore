@@ -11,3 +11,5 @@ node_modules/
 *.vi
 *~
 .DS_Store
+.idea
+*.iml
