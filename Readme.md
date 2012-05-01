@@ -40,6 +40,19 @@ pin('http://google.com/')
    })
 ```
 
+Check if response is back under maximum duration:
+
+```js
+var pin = require('pin');
+
+pin('http://google.com/')
+  .interval(10000) // in ms
+  .maxDuration(800) // in ms
+  .up(function(response, info) {
+      console.log(response, info.duration);
+   })
+```
+
 Register custom validator:
 
 ```js
@@ -79,6 +92,7 @@ pin('http://google.com/')
 - Super minimalistic api
 - Custom validators
 - Check if text is present in the body
+- Check response time
 - Custom headers
 
 ## Tests
