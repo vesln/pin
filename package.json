@@ -1,6 +1,6 @@
 {
     "name": "pin"
-	, "description": "Is my site up? Node.js edition."
+  , "description": "Is my site up? Node.js edition."
   , "version": "0.3.0"
   , "keywords": ["ping", "is my site up"]
   , "author": "Veselin Todorov <hi@vesln.com>"
@@ -19,7 +19,7 @@
   , "scripts": {
       "test": "make test"
   }
-  , "main": "./lib/pin.js"
+  , "main": "./lib/ping.js"
   , "engines": {
       "node": ">= 0.6.0"
   }

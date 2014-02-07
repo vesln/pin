@@ -1,29 +1,9 @@
-/*!
- * Pin(g) - Is my site up? Node.js edition.
- *
- * Veselin Todorov <hi@vesln.com>
- * MIT License
- */
-
-/**
- * Support.
- */
 var should = require('chai').should();
+var pin = require('../lib/ping');
 
-/**
- * Subject.
- */
-var pin = require('../lib/pin');
-
-/**
- * Return a fake driver object
- *
- * @param {Function} the desired get function
- * @retrns {Object}
- */
 function fakeDriver(fn) {
   return { get: fn }
-};
+}
 
 describe('pin', function() {
   it('supports custom validators', function(done) {
