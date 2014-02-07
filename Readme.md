@@ -6,7 +6,7 @@ Is my site up? Node.js edition.
 
 ## Install
 
-```	
+```
 $ npm install pin
 ```
 
@@ -96,7 +96,7 @@ pin('http://google.com/')
 - Custom headers
 
 ## Tests
-	
+
 ```
 $ npm install
 $ make test
