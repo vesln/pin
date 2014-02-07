@@ -1,26 +1,30 @@
 {
-    "name": "pin"
-  , "description": "Is my site up? Node.js edition."
-  , "version": "0.3.0"
-  , "keywords": ["ping", "is my site up"]
-  , "author": "Veselin Todorov <hi@vesln.com>"
-  , "dependencies": {
-      "request": "2.9.202"
-  }
-  , "devDependencies": {
-      "mocha": "0.x.x"
-    , "chai": "*"
-  }
-  , "repository" : {
-      "type" : "git"
-    , "url" : "http://github.com/vesln/pin.git"
-  }
-  , "homepage": "http://github.com/vesln/pin"
-  , "scripts": {
-      "test": "make test"
-  }
-  , "main": "./lib/ping.js"
-  , "engines": {
-      "node": ">= 0.6.0"
+  "name": "pin",
+  "description": "Is my site up? Node.js edition.",
+  "version": "0.3.0",
+  "keywords": [
+    "ping",
+    "is my site up"
+  ],
+  "author": "Veselin Todorov <hi@vesln.com>",
+  "dependencies": {
+    "request": "2.9.202",
+    "super": "~0.2.3"
+  },
+  "devDependencies": {
+    "mocha": "0.x.x",
+    "chai": "*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/vesln/pin.git"
+  },
+  "homepage": "http://github.com/vesln/pin",
+  "scripts": {
+    "test": "make test"
+  },
+  "main": "./lib/ping.js",
+  "engines": {
+    "node": ">= 0.6.0"
   }
 }
