@@ -2,11 +2,13 @@
   "name": "pin",
   "description": "Is my site up? Node.js edition.",
   "version": "0.3.0",
+  "main": "./lib/ping.js",
+  "author": "Veselin Todorov <hi@vesln.com>",
+  "homepage": "http://github.com/vesln/pin",
   "keywords": [
     "ping",
-    "is my site up"
+    "uptime"
   ],
-  "author": "Veselin Todorov <hi@vesln.com>",
   "dependencies": {
     "request": "2.9.202"
   },
@@ -18,12 +20,7 @@
     "type": "git",
     "url": "http://github.com/vesln/pin.git"
   },
-  "homepage": "http://github.com/vesln/pin",
   "scripts": {
     "test": "make test"
-  },
-  "main": "./lib/ping.js",
-  "engines": {
-    "node": ">= 0.6.0"
   }
 }
