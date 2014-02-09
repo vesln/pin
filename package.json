@@ -8,8 +8,7 @@
   ],
   "author": "Veselin Todorov <hi@vesln.com>",
   "dependencies": {
-    "request": "2.9.202",
-    "super": "~0.2.3"
+    "request": "2.9.202"
   },
   "devDependencies": {
     "mocha": "0.x.x",
