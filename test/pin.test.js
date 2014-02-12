@@ -8,7 +8,7 @@ function fakeDriver(fn) {
 describe('pin', function() {
   it('supports custom validators', function(done) {
     var driver = fakeDriver(function(url, fn) {
-      fn(null, {statusCode: '200'});
+      fn(null, {statusCode: 200});
     });
 
     var end = false;
@@ -26,7 +26,7 @@ describe('pin', function() {
   describe('when monitoring', function() {
     it('is repeatable', function(done) {
       var driver = fakeDriver(function(url, fn) {
-        fn(null, {statusCode: '200'});
+        fn(null, {statusCode: 200});
       });
 
       var i = 0;
