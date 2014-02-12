@@ -10,7 +10,7 @@
     "uptime"
   ],
   "dependencies": {
-    "request": "2.9.202"
+    "request": "2.33"
   },
   "devDependencies": {
     "mocha": "0.x.x",
