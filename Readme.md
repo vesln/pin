@@ -4,11 +4,13 @@
 
 Is my site up? Node.js edition.
 
-## Install
+## Features
 
-```
-$ npm install pin
-```
+- Minimalistic API
+- Custom validators
+- Check if text is present in the body
+- Check response time
+- Custom headers
 
 ## Usage
 
@@ -87,19 +89,10 @@ pin('http://google.com/')
    })
 ```
 
-## Features
-
-- Super minimalistic api
-- Custom validators
-- Check if text is present in the body
-- Check response time
-- Custom headers
-
-## Tests
+## Installation
 
 ```
-$ npm install
-$ make test
+$ npm install pin
 ```
 
 ## License
