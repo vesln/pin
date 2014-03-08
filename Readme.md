@@ -55,6 +55,21 @@ pin('http://google.com/')
    })
 ```
 
+Run a one-off ping:
+
+```js
+var pin = require('pin');
+
+pin('http://google.com')
+  .up(function(response) {
+      console.log(response);
+   })
+  .down(function(error, response) {
+      console.log(error, response);
+  })
+  .check();
+```
+
 Register custom validator:
 
 ```js
